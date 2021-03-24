@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-03-24T14:39:13.007Z",
+    "end": "2021-03-24T14:39:13.037Z",
+    "duration": 30,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "99c1d155-6f49-49e9-8b17-8c97cbc04018",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "072142ef-6d89-438c-95cb-f880b544053b",
+          "title": "接口测试",
+          "fullFile": "/Users/littleboy/Desktop/qa-server-test/tests/server/index.spec.js",
+          "file": "/tests/server/index.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test接口测试",
+              "fullTitle": "接口测试 test接口测试",
+              "timedOut": false,
+              "duration": 23,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "superagent(app.listen())\n  .get(\"/test\")\n  .expect(200)\n  .expect(\"Content-Type\", /json/)\n  .end(function (err, res) {\n    err && done(err)\n    let flag = false\n    const dataKey = Object.keys(res.data)\n    flag = !(dataKey.includes(\"payload\") && dataKey.includes(\"code\"))\n    flag ? new Error(\"数据接口字段返回不准确\") : done()\n  })",
+              "err": {
+                "message": "TypeError: Cannot convert undefined or null to object",
+                "estack": "TypeError: Cannot convert undefined or null to object\n    at Function.keys (<anonymous>)\n    at Test.<anonymous> (tests/server/index.spec.js:13:32)\n    at Test.assert (node_modules/supertest/lib/test.js:209:6)\n    at localAssert (node_modules/supertest/lib/test.js:159:12)\n    at /Users/littleboy/Desktop/qa-server-test/node_modules/supertest/lib/test.js:156:5\n    at Test.Request.callback (node_modules/superagent/lib/node/index.js:894:12)\n    at /Users/littleboy/Desktop/qa-server-test/node_modules/superagent/lib/node/index.js:1127:20\n    at IncomingMessage.<anonymous> (node_modules/superagent/lib/node/parsers/json.js:22:7)\n    at endReadableNT (internal/streams/readable.js:1327:12)",
+                "diff": null
+              },
+              "uuid": "fd6291e1-f353-4645-8130-94300edc7c29",
+              "parentUUID": "072142ef-6d89-438c-95cb-f880b544053b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "fd6291e1-f353-4645-8130-94300edc7c29"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.3.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "./docs/mochawesome-report"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
